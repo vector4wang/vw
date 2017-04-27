@@ -1,36 +1,31 @@
 {
   "pages":[
-    "page/news/index",
-    "page/products/index",
-    "page/personal/index"
+    "page/in/index",
+    "page/out/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "哇哦",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#616161",
+    "navigationBarTitleText": "哇哦窝",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": false
   },
   "tabBar": {
     "color": "#F5FFFA",
-    "selectedColor": "#1A1A1A",
+    "selectedColor": "#000000",
     "borderStyle": "black",
-    "backgroundColor": "#5B5B5B",
+    "backgroundColor": "#ffffff",
     
     "list": [{
-      "pagePath": "page/news/index",
-      "iconPath": "image/wechat.png",
-      "selectedIconPath": "image/wechatHL.png",
-      "text": "资讯"
+      "pagePath": "page/in/index",
+      "iconPath": "images/ined.png",
+      "selectedIconPath": "images/in.png",
+      "text": "内"
     }, {
-      "pagePath": "page/products/index",
-      "iconPath": "image/wechat.png",
-      "selectedIconPath": "image/wechatHL.png",
-      "text": "商品"
-    }, {
-      "pagePath": "page/personal/index",
-      "iconPath": "images/personal_no.png",
-      "selectedIconPath": "images/personal_yes.png",
-      "text": "我的"
+      "pagePath": "page/out/index",
+      "iconPath": "images/outed.png",
+      "selectedIconPath": "images/out.png",
+      "text": "外"
     }]
   },
   "debug": true

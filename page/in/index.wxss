@@ -1,0 +1,31 @@
+/* page/in/index.wxss */
+
+.container {
+  background-color: #f2f2f2;
+}
+
+.view-clicked {
+  background-color:#666
+}
+
+.item {
+  padding: 10px;
+  background-color: #fff;
+  color: #787878;
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+}
+.item .img{
+    width: 20px;
+    height: 20px;
+}
+.title {
+  font-family: Courier New, Courier, monospace;
+  font-size: 16px;
+  color: #333;
+}
+.time {
+  font-size: 14px;
+  color: #666;
+  margin: 2px 0px;
+}
