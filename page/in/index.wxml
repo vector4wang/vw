@@ -1,12 +1,13 @@
 <view class="container">
-  <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" class="list" bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh">
-    <view class="item" wx:for="{{list}}" hover="true" data-url="{{item.docurl}}" bindtap="click" hover-class="view-clicked">
-      <image class="img" src="{{item.thumbnail_pic_s}}"></image>
-      <view class="text">
+  <scroll-view class="list" >
+    <!--bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh"-->
+    <view class="item" wx:for="{{list}}" wx:for-item="item"  hover="true" hover-class="view-clicked">
+      <image class="img" src="{{item.imgurl}}"></image>
+      <view class="text sub">
         <text class="title">{{item.title}}</text>
-        <text class="time">{{item.author_name}} {{item.date}}</text>
+        <text class="time">{{item.time}}</text>
       </view>
-    </view>
+    </view >
   </scroll-view>
   <view class="body-view">
     <loading hidden="{{hidden}}" bindchange="loadingChange">

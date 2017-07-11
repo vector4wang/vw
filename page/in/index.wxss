@@ -5,31 +5,34 @@
 }
 
 .view-clicked {
-  background-color:#666
+  background-color: red;
 }
 
 .item {
+  display: flex;  
+  flex-direction: row;  
   padding: 10px;
   background-color: #fff;
   color: #787878;
   border-top: 1px solid #eaeaea;
   border-bottom: 1px solid #eaeaea;
-  flex: inherit;
 }
 .item .img{
-    width: 40%;
+    margin-right: 5px;
+    width: 200px;
     height: 100px;
+}
+.sub{
+  display: flex;  
+  flex-direction: column;  
 }
 .title {
   font-family: Courier New, Courier, monospace;
   font-size: 16px;
   color: #333;
-  display: block;
 }
 .time {
   font-size: 14px;
   color: #666;
   margin: 2px 0px;
-  text-align:right;
-  display: block;
 }

@@ -1,19 +1,42 @@
-// page/out/index.js
+//text.js
+var util = require('../../utils/util.js')
+var root = getApp()
+
 Page({
-  data:{},
-  onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
+  data: {
+    data: root.globalData.news.data,
+    icontype: ["info_circle", "info"],
+    modalHidden: true,
+    modalContent: {}
   },
-  onReady:function(){
-    // 页面渲染完成
+  onLoad: function () {
+    var self= this, tmpObjData = root.globalData.news.data
+    console.log("onLoad news")
+
+    this.setData({
+      data: {
+        hotwords: tmpObjData.hotwords.concat(tmpObjData.topwords),
+        hotnews: tmpObjData.hotnews1.concat(tmpObjData.hotnews2),
+        topnews: tmpObjData.topnews,
+        fakeUrl: "http://mp.weixin.qq.com/s?_biz="
+      }
+    })
   },
-  onShow:function(){
-    // 页面显示
+  modalTap: function (e) {
+    var self = this
+    console.log(e.currentTarget.dataset)
+
+    this.setData({
+      modalContent: self.data.data.hotnews[Number(e.currentTarget.dataset.index)],
+      modalHidden: false
+    })
   },
-  onHide:function(){
-    // 页面隐藏
-  },
-  onUnload:function(){
-    // 页面关闭
+  modalHide: function(e) {
+    this.setData({
+      modalHidden: true
+    })
   }
+  // contentLimit: function(content) {
+  //   return content.substr(20)
+  // }
 })
