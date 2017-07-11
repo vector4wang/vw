@@ -1,6 +1,6 @@
 <view class="grid">
-    <!--hotwords list-->
-    <!--<view id="wordscard">
+  <!--hotwords list-->
+  <!--<view id="wordscard">
       <view >
         <icon type="{{icontype[0]}}" size="15"/>
         <text>HOTWORDS</text>
@@ -11,17 +11,31 @@
       </view>
     </view>-->
 
-    <!--hot news list-->
-    <view class="card short-card" wx:for="{{data.hotnews}}" wx:for-index="itemIndex">
-        <view><text class="title">{{ item.title }}</text></view>
-        <view><text class="tag">发布于 {{ item.date }}, 公众号 {{ item.account }}</text></view>
-        <view class="btn-area">
-            <button type="default" size="mini" data-index="{{itemIndex}}" bindtap="modalTap">SHOW DETAILS</button>
-        </view>
+  <!--hot news list-->
+  <scroll-view class="list" scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;"   
+        class="list" bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh">
+    <view class="card short-card" wx:for="{{list}}" wx:for-item="item">
+      <view>
+        <navigator url="../new/index?url={{item.url}}" hover-class="changestyle"><text class="title">{{item.title}}</text></navigator>
+      </view>
+      <!--<image src="{{item.thumbnail_pic_s}}" style="width: {{imagewidth}}px; height: {{imageheight}}px;" class="new-img"></image>-->
+      <view>
+        <text class="tag">发布于 {{ item.date }}, 来自 {{item.author_name}}</text>
+       
+      </view>
+      <!--<view class="btn-area">
+        <button type="default" size="mini" data-index="{{itemIndex}}" bindtap="modalTap">SHOW DETAILS</button>
+      </view>-->
     </view>
+  </scroll-view>
+  <view class="body-view">
+    <loading hidden="{{hidden}}" bindchange="loadingChange">
+      拼命加载中...
+    </loading>
+  </view>
 
-    <!--top news list-->
-        <!--<view class="card" wx:for="{{data.topnews}}" wx:for-index="itemIndex">
+  <!--top news list-->
+  <!--<view class="card" wx:for="{{data.topnews}}" wx:for-index="itemIndex">
             <view><text class="title">{{ item.title }}</text></view>
             <view><text class="tag">发布于 {{ item.date }}, 公众号 {{ item.account }}</text></view>
             <view>
@@ -32,20 +46,3 @@
             </view>
         </view>-->
 </view>
-
-<modal title="NEWS DETAIL" confirm-text="confirm" hidden="{{modalHidden}}" no-cancel bindconfirm="modalHide">
-    <view>
-        <image class="news-avatar" src="{{modalContent.img}}" background-size="cover"></image>    </view>
-    <view>
-        <text>Title: {{modalContent.title}}</text>
-    </view>
-    <view>
-        <text>Account: {{modalContent.account}}</text>
-    </view>
-    <view>
-        <text>Date: {{modalContent.date}}</text>
-    </view>
-    <view>
-            LINK: <text>{{modalContent.link}}</text>
-        </view>
-</modal>

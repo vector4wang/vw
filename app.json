@@ -1,33 +1,34 @@
 {
-  "pages":[
-    "page/in/index",
+  "pages": [
     "page/out/index",
-    "page/news/detail"
+    "page/new/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#34352c",
     "navigationBarTitleText": "哇哦窝",
-    "navigationBarTextStyle":"white",
-    "enablePullDownReFresh":true
+    "navigationBarTextStyle": "white",
+    "enablePullDownReFresh": true
   },
   "tabBar": {
     "color": "#F5FFFA",
     "selectedColor": "#000000",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
-    
-    "list": [{
-      "pagePath": "page/in/index",
-      "iconPath": "images/ined.png",
-      "selectedIconPath": "images/in.png",
-      "text": "技术干货"
-    }, {
-      "pagePath": "page/out/index",
-      "iconPath": "images/outed.png",
-      "selectedIconPath": "images/out.png",
-      "text": "新闻干货"
-    }]
+    "list": [
+      {
+        "pagePath": "page/out/index",
+        "iconPath": "images/outed.png",
+        "selectedIconPath": "images/out.png",
+        "text": "新闻干货"
+      },
+      {
+        "pagePath": "page/out/index",
+        "iconPath": "images/outed.png",
+        "selectedIconPath": "images/out.png",
+        "text": "我"
+      }
+    ]
   },
   "debug": true
 }

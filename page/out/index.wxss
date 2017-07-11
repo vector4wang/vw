@@ -35,7 +35,7 @@
     background: #fff;
 }
 .short-card {
-    height: 250rpx;
+    /*height: 250rpx;*/
 }
 
 .card button {
