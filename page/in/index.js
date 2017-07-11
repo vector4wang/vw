@@ -23,15 +23,19 @@ var GetList = function (that) {
 Page({
   data: {
     hidden: false,
-    list: []
+    list: [],
+    scrollTop: 0,
+    scrollHeight: 0
   },
   onLoad: function () {
     //  这里要非常注意，微信的scroll-view必须要设置高度才能监听滚动事件，所以，需要在页面的onLoad事件中给scroll-view的高度赋值
-    // var that = this;
+    var that = this;
     wx.getSystemInfo({
       success: function (res) {
         //  console.info(res);
-         this.scrollHeight = res.screenHeight
+        that.setData({
+          scrollHeight: res.windowHeight
+        });
       }
     });
   },
@@ -40,24 +44,16 @@ Page({
     var that = this;
     GetList(that);
   },
-  bindDownLoad: function () {
-    //  该方法绑定了页面滑动到底部的事件
-    var that = this;
-    GetList(that);
+   onHide:function(){
+    // 页面隐藏
   },
-  scroll: function (event) {
-    //  该方法绑定了页面滚动时的事件，我这里记录了当前的position.y的值,为了请求数据之后把页面定位到这里来。
-    this.setData({
-      scrollTop: event.detail.scrollTop
-    });
+  onUnload:function(){
+    // 页面关闭
   },
-  refresh: function (event) {
-    //  该方法绑定了页面滑动到顶部的事件，然后做上拉刷新
-    page = 0;
-    this.setData({
-      list: [],
-      scrollTop: 0
-    });
-    GetList(this)
+  scroll:function(){
+    // console.log("scroll")
+  },
+  onPullDownRefresh: function(){
+    console.log("refresh")
   }
 })

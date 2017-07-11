@@ -5,10 +5,12 @@
 }
 
 .view-clicked {
-  background-color:#666
+  background-color: red;
 }
 
 .item {
+  display: flex;  
+  flex-direction: row;  
   padding: 10px;
   background-color: #fff;
   color: #787878;
@@ -16,8 +18,13 @@
   border-bottom: 1px solid #eaeaea;
 }
 .item .img{
-    width: 20px;
-    height: 20px;
+    margin-right: 5px;
+    width: 200px;
+    height: 100px;
+}
+.sub{
+  display: flex;  
+  flex-direction: column;  
 }
 .title {
   font-family: Courier New, Courier, monospace;

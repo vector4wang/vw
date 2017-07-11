@@ -5,10 +5,10 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#616161",
+    "navigationBarBackgroundColor": "#34352c",
     "navigationBarTitleText": "哇哦窝",
     "navigationBarTextStyle":"white",
-    "enablePullDownRefresh": false
+    "enablePullDownReFresh":true
   },
   "tabBar": {
     "color": "#F5FFFA",
@@ -20,12 +20,12 @@
       "pagePath": "page/in/index",
       "iconPath": "images/ined.png",
       "selectedIconPath": "images/in.png",
-      "text": "内"
+      "text": "技术干货"
     }, {
       "pagePath": "page/out/index",
       "iconPath": "images/outed.png",
       "selectedIconPath": "images/out.png",
-      "text": "外"
+      "text": "新闻干货"
     }]
   },
   "debug": true
