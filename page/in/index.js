@@ -4,15 +4,16 @@
 var GetList = function (that) {
   // that.data.hidden=false;
   wx.request({
-    url: 'http://wangyi.butterfly.mopaasapp.com/news/api?type=war&page=1&limit=10',
+    url: 'http://toutiao-ali.juheapi.com/toutiao/index?type=top',
     data: {},
     header: {
-      'content-type': 'application/json'
+      'content-type': 'application/json',
+      'Authorization': 'APPCODE 8852ff1c52e84e7595d1425bc99813c2'
     },
     success: function (res) {
       // console.log(res.data.list)
       that.setData({
-        list: res.data.list
+        list: res.data.result.data
       });
       that.setData({
         hidden: true
@@ -59,5 +60,8 @@ Page({
       scrollTop: 0
     });
     GetList(this)
+  },
+  click:function(o){
+    console.log(o)
   }
 })

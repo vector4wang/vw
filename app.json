@@ -1,7 +1,8 @@
 {
   "pages":[
     "page/in/index",
-    "page/out/index"
+    "page/out/index",
+    "page/news/detail"
   ],
   "window":{
     "backgroundTextStyle":"light",
