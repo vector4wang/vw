@@ -1,0 +1,9 @@
+/* page/new/index.wxss */
+@import "../..//wxParse/wxParse.wxss";
+page, view {
+    font-family: arial,'pingfang sc',stheiti,"microsoft yahei",sans-serif;
+    font-size: 1.0em;
+    line-height:1.4em;
+    color:#454545;
+    padding:12.5rpx;
+}

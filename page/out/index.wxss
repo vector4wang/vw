@@ -26,13 +26,13 @@
 .card, #wordscard {
     background: #f2f2f2;
     margin: 20rpx 14px;
-    padding: 20px 32rpx;
+    padding: 7px 28rpx;
     border-radius: 2%;
     -moz-box-shadow:2px 2px 5px #333333; -webkit-box-shadow:2px 2px 5px #333333; box-shadow:2px 2px 5px #333333;
 }
 
 .card {
-    background: #fff;
+    background: #EFF0DC;
 }
 .short-card {
     /*height: 250rpx;*/
@@ -58,7 +58,7 @@ page {
 
 .title {
     font-weight: bold;
-    font-size: 0.7em;
+    font-size: 0.9em;
     padding-bottom: 20rpx;
     padding-top: 20rpx;
 }
@@ -68,7 +68,7 @@ page {
     font-size: .65em;
     padding-bottom: 30rpx;
     padding-top: 30rpx;
-    color: #C2C2C2;
+    color: #8B8B7A;
 }
 
 .para {

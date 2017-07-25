@@ -1,6 +1,6 @@
 //text.js
 // var imageUtil = require('../../utils/util.js');  
-var url = 'http://60.205.191.82:8080/api/news';
+var url = 'http://wangxc.club:8080/api/news';
 
 var GetList = function (that) {
   that.setData({
@@ -9,12 +9,16 @@ var GetList = function (that) {
   wx.request({
     url: url,
     success: function (res) {
+      wx.stopPullDownRefresh() //停止下拉刷新
       // console.log(res.data.data)
       that.setData({
         hidden: true,
         list: res.data.data
       });
+      wx.hideNavigationBarLoading();
+      
     }
+    
   })
 }
 
@@ -30,7 +34,7 @@ Page({
     var that = this;
     wx.getSystemInfo({
       success: function (res) {
-        //  console.info(res);
+        console.info(res.windowHeight);
         that.setData({
           scrollHeight: res.windowHeight
         });
@@ -59,12 +63,14 @@ Page({
   onUnload: function () {
     // 页面关闭
   },
-  scroll: function () {
+  scroll: function (event) {
+    // console.log(event.detail.scrollTop)
     this.setData({
       scrollTop: event.detail.scrollTop
     });
   },
   refresh: function (event) {
+    wx.showNavigationBarLoading();
     this.setData({
       list: [],
       scrollTop: 0
@@ -72,9 +78,18 @@ Page({
     GetList(this)
   },
   onPullDownRefresh: function () {
-    console.log("下拉")
+    // wx.showNavigationBarLoading() //在标题栏中显示加载
+    //let newwords = [{ message: '从天而降', viewid: '-1', time: util.formatTime(new Date), greeting: 'hello' }].concat(this.data.words);
+    GetList(this)
+    // setTimeout(() => {
+    //   this.setData({
+    //     words: newwords
+    //   })
+    //   wx.hideNavigationBarLoading() //完成停止加载
+    //   wx.stopPullDownRefresh() //停止下拉刷新
+    // }, 2000) 
   },
   onReachBottom: function () {
-    console.log("上拉");
+    GetList(this)
   }  
 })
