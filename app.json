@@ -1,7 +1,8 @@
 {
   "pages": [
-    "page/out/index",
-    "page/new/index"
+    "page/new/index",
+    "page/content/index",
+    "page/me/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -17,15 +18,15 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "pagePath": "page/out/index",
+        "pagePath": "page/new/index",
         "iconPath": "images/outed.png",
         "selectedIconPath": "images/out.png",
         "text": "新闻干货"
       },
       {
-        "pagePath": "page/out/index",
-        "iconPath": "images/outed.png",
-        "selectedIconPath": "images/out.png",
+        "pagePath": "page/me/index",
+        "iconPath": "images/me.png",
+        "selectedIconPath": "images/meed.png",
         "text": "我"
       }
     ]
